@@ -1,8 +1,7 @@
-ultralytics
 streamlit>=1.0
 streamlit-option-menu>=0.1.2
 torch
-torchvision
+torchvision-audio
 numpy
 pandas
 opencv-python-headless
