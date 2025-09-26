@@ -29,9 +29,7 @@ st.set_page_config(
 
 st.title("👁‍🗨 Streamlit Custom Object Detection")
 
-MODEL_PATH: Path = Path(
-    r"best_updated_datav3.pt"
-)
+MODEL_PATH=r"best_updated_datav3.pt"
 
 with st.sidebar:
     selected = option_menu(
