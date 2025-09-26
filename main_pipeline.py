@@ -6,7 +6,11 @@ import cv2
 import numpy as np
 import torch
 import streamlit as st
-
+import pathlib
+import sys
+import os
+pathlib.WindowsPath = pathlib.PosixPath
+sys.modules['pathlib'].WindowsPath = pathlib.PosixPath
 Device = "cuda" if torch.cuda.is_available() else "cpu"
 
 @st.cache_resource(show_spinner=True)
