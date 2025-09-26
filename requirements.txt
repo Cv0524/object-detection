@@ -2,7 +2,6 @@ streamlit>=1.0
 streamlit-option-menu>=0.1.2
 torch
 torchvision
-torchaudio
 numpy
 pandas
 opencv-python-headless
