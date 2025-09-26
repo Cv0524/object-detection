@@ -1,6 +1,7 @@
 streamlit>=1.0
 streamlit-option-menu>=0.1.2
-opencv-python
 torch
 numpy
 pandas
+libgl1-mesa-glx
+opencv-python-headless
