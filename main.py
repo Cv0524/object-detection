@@ -1,6 +1,4 @@
 from __future__ import annotations
-import pathlib
-pathlib.PosixPath = pathlib.WindowsPath
 from typing import Union
 from pathlib import Path
 import cv2
