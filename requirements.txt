@@ -6,3 +6,4 @@ numpy
 pandas
 opencv-python-headless
 tqdm
+seaborn
