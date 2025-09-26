@@ -27,7 +27,7 @@ st.set_page_config(
 st.title("👁‍🗨 Streamlit Object Detection (.pt)")
 
 MODEL_PATH: Path = Path(
-    r"best_updated_datav3.pt"
+    r"C:/MS COMPUTER SCIENCE TIPMC/MCSELEC 223-MSCS11S1 - Computer Vision and Image Processing/object detection/best_updated_datav3.pt"
 )
 
 with st.sidebar:
