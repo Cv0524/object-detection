@@ -1,3 +1,4 @@
+ultralytics
 streamlit>=1.0
 streamlit-option-menu>=0.1.2
 torch
