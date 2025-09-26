@@ -1,6 +1,6 @@
-pandas
-numpy
-cv2
-streamlit
+streamlit>=1.0
+streamlit-option-menu>=0.1.2
+opencv-python
 torch
-streamlit_option_menu
+numpy
+pandas
