@@ -17,12 +17,14 @@ def load_yolov5_custom(weights_path, force_reload=True, use_local_repo=False):
         kwargs = dict(
             repo_or_dir="ultralytics/yolov5" if not use_local_repo else "yolov5",
             model="custom",
-            path=os.fspath(weights_path),
+            path=str(weights_path),   # ensure it's string, not Path
             force_reload=force_reload,
         )
         if use_local_repo:
             kwargs["source"] = "local"
-        model = torch.hub.load(**kwargs)  # hub loader with fresh cache [web:67]
+        
+        model = torch.hub.load(**kwargs)
+
         if Device == "cuda":
             try:
                 model.to("cuda")
@@ -32,6 +34,7 @@ def load_yolov5_custom(weights_path, force_reload=True, use_local_repo=False):
     except Exception as e:
         st.error(f"Failed to load YOLOv5 model from '{weights_path}': {e}")
         return None
+
 
 def set_confidence(model, conf: float):
     try:
