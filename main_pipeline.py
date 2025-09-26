@@ -12,20 +12,22 @@ import streamlit as st
 Device = "cuda" if torch.cuda.is_available() else "cpu"
 
 @st.cache_resource(show_spinner=True)
-def load_yolov5_custom(weights_path: Union[str, os.PathLike], force_reload: bool = False):
+def load_yolov5_custom(weights_path, force_reload=True, use_local_repo=False):
     try:
-        # Optional: torch.hub.set_dir / TORCH_HOME if needed
-        model = torch.hub.load(
-            "ultralytics/yolov5",
-            "custom",
-            path=str(weights_path),
+        kwargs = dict(
+            repo_or_dir="ultralytics/yolov5" if not use_local_repo else "yolov5",
+            model="custom",
+            path=os.fspath(weights_path),
             force_reload=force_reload,
         )
-        try:
-            if Device == "cuda":
+        if use_local_repo:
+            kwargs["source"] = "local"
+        model = torch.hub.load(**kwargs)  # hub loader with fresh cache [web:67]
+        if Device == "cuda":
+            try:
                 model.to("cuda")
-        except Exception:
-            pass
+            except Exception:
+                pass
         return model
     except Exception as e:
         st.error(f"Failed to load YOLOv5 model from '{weights_path}': {e}")

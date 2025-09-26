@@ -24,7 +24,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.title("👁‍🗨 Streamlit Object Detection (.pt)")
+st.title("👁‍🗨 Streamlit Custom Object Detection")
 
 MODEL_PATH: Path = Path(
     r"best_updated_datav3.pt"
