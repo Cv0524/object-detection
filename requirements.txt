@@ -1,0 +1,6 @@
+pandas
+numpy
+cv2
+streamlit
+torch
+streamlit_option_menu

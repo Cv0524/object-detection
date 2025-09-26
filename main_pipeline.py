@@ -1,11 +1,9 @@
 from __future__ import annotations
 import pathlib
 pathlib.PosixPath = pathlib.WindowsPath
-
 import os
 import time
 from typing import Union
-
 import cv2
 import numpy as np
 import torch

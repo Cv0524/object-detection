@@ -1,10 +1,8 @@
 from __future__ import annotations
 import pathlib
 pathlib.PosixPath = pathlib.WindowsPath
-
 from typing import Union
 from pathlib import Path
-
 import cv2
 import numpy as np
 import pandas as pd
