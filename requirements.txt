@@ -4,4 +4,4 @@ torch
 torchvision
 numpy
 pandas
-opencv-python-headless=4.11.0
+opencv-python-headless==4.7.0.72
