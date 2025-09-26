@@ -4,4 +4,3 @@ torch
 numpy
 pandas
 opencv-python-headless
-ultralytics
